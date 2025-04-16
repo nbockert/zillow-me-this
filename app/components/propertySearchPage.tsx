@@ -55,17 +55,19 @@ export default function PropertySearchPage() {
             {loading && <CircularProgress />}
             <Box mt={4} display="flex" flexWrap="wrap" gap={2}>
                 {properties.map((property) => (
-                    <Card key={property.zpid} sx={{ width: 300 }}>
-                        <CardMedia component="img" height="180" image={property.imgSrc} alt={property.address} />
-                        <CardContent>
-                            <Typography variant="h6">{property.address}</Typography>
-                            <Typography variant="body2">
-                                {property.bedrooms} bd • {property.bathrooms} ba • {property.livingArea} sqft
-                            </Typography>
-                            <Typography variant="body1">${property.price.toLocaleString()}</Typography>
-                            <Typography variant="caption">{property.propertyType}</Typography>
-                        </CardContent>
-                    </Card>
+                    <Link href={`/${property.zpid}`} key={property.zpid}>
+                        <Card key={property.zpid} sx={{ width: 300 }}>
+                            <CardMedia component="img" height="180" image={property.imgSrc} alt={property.address} />
+                            <CardContent>
+                                <Typography variant="h6">{property.address}</Typography>
+                                <Typography variant="body2">
+                                    {property.bedrooms} bd • {property.bathrooms} ba • {property.livingArea} sqft
+                                </Typography>
+                                <Typography variant="body1">${property.price.toLocaleString()}</Typography>
+                                <Typography variant="caption">{property.propertyType}</Typography>
+                            </CardContent>
+                        </Card>
+                    </Link>
                 ))}
             </Box>
         </Box>

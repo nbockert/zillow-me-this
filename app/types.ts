@@ -30,3 +30,22 @@ export type Property = {
     lotAreaUnit: string;
     hasImage: boolean;
 };
+
+export type SingleProperty = {
+    zpid: string;
+    imgSrc: string;
+    price: number;
+    bedrooms: number;
+    bathrooms: number;
+    livingArea: string;
+    yearBuilt: number;
+    homeStatus: string;
+    description: string;
+    address: {
+        streetAddress: string;
+        city: string;
+        state: string;
+        zipCode: string;
+    };
+    homeType: string;
+};
