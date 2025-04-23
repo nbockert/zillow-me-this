@@ -2,6 +2,7 @@
 import React from "react";
 import { Box} from "@mui/material";
 import Image from "next/image";
+import UserProfile from "../components/UserProfile";
 
 const Header = () => {
     return (
@@ -26,6 +27,7 @@ const Header = () => {
                 height={154}
                 style={{ maxWidth: "100vw", height: "auto" }}
             />
+            <UserProfile />
         </Box>
     );
 };
