@@ -2,6 +2,7 @@
 'use client';
 import { useSession } from 'next-auth/react';
 import SignInButton from "./SignInButton";
+import SignOutButton from "./SignOutButton";
 
 export default function UserProfile() {
     const { data: session, status } = useSession();
@@ -22,6 +23,7 @@ export default function UserProfile() {
         <div>
             <p>Welcome, {session.user?.name}</p>
             <img src={session.user?.image || ''} alt="User Avatar" />
+            <SignOutButton />
         </div>
     );
 }
