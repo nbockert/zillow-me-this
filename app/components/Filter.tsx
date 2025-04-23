@@ -13,13 +13,13 @@ import {
 } from "@mui/material";
 import styled from "styled-components";
 
-const statusType = ["ForSale", "ForRent", "RecentlySold"];
+const status_type = ["ForSale", "ForRent", "RecentlySold"];
 
 type FilterBarProps = {
     onSearchAction: (filters: {
         location: string;
-        statusType: string;
-        homeType?: string;
+        status_type: string;
+        home_type?: string;
         maxPrice?: number;
         rentMaxPrice?: number;
     }) => void;
@@ -29,13 +29,16 @@ const FilterWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
+   
+    
 `;
 
 export default function FilterBar({ onSearchAction }: FilterBarProps) {
     const [status, setStatus] = useState<string>("");
-    const [homeTypes, setHomeTypes] = useState<string[]>([]);
+    const [home_types, setHomeTypes] = useState<string[]>([]);
     const [location, setLocation] = useState<string>("");
     const [maxPrice, setMaxPrice] = useState<number | undefined>();
     const [rentMaxPrice, setRentMaxPrice] = useState<number | undefined>();
@@ -63,16 +66,16 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
     const handleSearch = () => {
         const filters: {
             location: string;
-            statusType: string;
-            homeType?: string;
+            status_type: string;
+            home_type?: string;
             maxPrice?: number;
             rentMaxPrice?: number;
         } = {
             location,
-            statusType: status,
+            status_type: status,
         };
 
-        if (selectedHomeType) filters.homeType = selectedHomeType;
+        if (selectedHomeType) filters.home_type = selectedHomeType;
         if (status === "ForRent" && rentMaxPrice !== undefined)
             filters.rentMaxPrice = rentMaxPrice;
         if (
@@ -80,6 +83,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
             maxPrice !== undefined
         )
             filters.maxPrice = maxPrice;
+        console.log(filters);
 
         onSearchAction(filters);
     };
@@ -87,7 +91,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
 
     return (
         <FilterWrapper>
-        <Box display="flex" flexWrap="wrap" gap={2} justifyContent="space-between" maxWidth="100%">
+        <Box display="flex" flexWrap="wrap" gap={2} justifyContent="space-between" maxWidth="50%">
             <TextField
                 label="Location"
                 value={location}
@@ -103,7 +107,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
                     onChange={(e) => setStatus(e.target.value)}
                     required
                 >
-                    {statusType.map((type) => (
+                    {status_type.map((type) => (
                         <MenuItem key={type} value={type}>
                             {type}
                         </MenuItem>
@@ -119,7 +123,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
                         label="Home Type"
                         onChange={(e) => setSelectedHomeType(e.target.value)}
                     >
-                        {homeTypes.map((type) => (
+                        {home_types.map((type) => (
                             <MenuItem key={type} value={type}>
                                 {type}
                             </MenuItem>

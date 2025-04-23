@@ -47,5 +47,5 @@ export type SingleProperty = {
         state: string;
         zipCode: string;
     };
-    homeType: string;
+    home_type: string;
 };

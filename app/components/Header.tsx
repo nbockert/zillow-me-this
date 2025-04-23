@@ -1,0 +1,33 @@
+//author: Nora Bockert
+import React from "react";
+import { Box} from "@mui/material";
+import Image from "next/image";
+
+const Header = () => {
+    return (
+        <Box
+            component="header"
+            sx={{
+                width: "100vw",
+                backgroundColor: "#a1e3f9",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: 0,
+                margin: 0,
+                boxShadow: 1,
+                flex: 1,
+            }}
+        >
+            <Image
+                src="/logo.png"
+                alt="Logo"
+                width={354}
+                height={154}
+                style={{ maxWidth: "100vw", height: "auto" }}
+            />
+        </Box>
+    );
+};
+
+export default Header;

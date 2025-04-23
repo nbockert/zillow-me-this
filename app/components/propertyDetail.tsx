@@ -18,7 +18,7 @@ export default function PropertyDetail({property}: {property: SingleProperty}) {
                     <Typography>{property.bedrooms} bedrooms</Typography>
                     <Typography>{property.bathrooms} bathrooms</Typography>
                     <Typography>{property.livingArea} square ft of living area</Typography>
-                    <Typography>Property Type: {property.homeType} • {property.homeStatus}</Typography>
+                    <Typography>Property Type: {property.home_type} • {property.homeStatus}</Typography>
                     <Typography>Constructed in {property.yearBuilt}</Typography>
                 </Card>
                 <Card>
