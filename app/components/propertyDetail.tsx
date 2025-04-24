@@ -11,18 +11,18 @@ export default function PropertyDetail({property}: {property: SingleProperty}) {
                     sx={{width:"50vw", height:"auto", margin: "0 auto", marginBottom:"1rem", borderRadius:"15px"}}
                     component="img"
                     image={property.imgSrc}
-                    alt = {property.address?.streetAddress}
+                    alt = {property.address.streetAddress}
                 />
-                <Card sx={{padding:"1rem"}}>
-                    <Typography>{property.address?.streetAddress} {property.address?.city} {property.address?.state} {property.address?.zipCode}</Typography>
-                    <Typography>Current Price ${property.price?.toLocaleString()}</Typography>
+                <Card sx={{padding:"2rem", backgroundColor: "#f4faff", borderRadius: "10px"}}>
+                    <Typography>{property.address.streetAddress} {property.address?.city} {property.address?.state} {property.address?.zipCode}</Typography>
+                    <Typography>Current Price ${property.price.toLocaleString()}</Typography>
                     <Typography>{property.bedrooms} bedrooms</Typography>
                     <Typography>{property.bathrooms} bathrooms</Typography>
                     <Typography>{property.livingArea} square ft of living area</Typography>
                     <Typography>Property Type: {property.home_type} • {property.homeStatus}</Typography>
                     <Typography>Constructed in {property.yearBuilt}</Typography>
                 </Card>
-                <Card>
+                <Card sx={{padding:"2rem", backgroundColor: "#f4faff", borderRadius: "10px"}}>
                     <Typography>{property.description}</Typography>
                 </Card>
             </Card>
