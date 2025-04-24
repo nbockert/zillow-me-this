@@ -1,12 +1,12 @@
 //auth: lucy scho
 "use client";
-import SignInButton from "./SignInButton";
+import SignInButton from "./signInButton";
 import { Box, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
-export default function LoginPage() {
+export default function LogInPage() {
     const { data: session, status } = useSession();
     const router = useRouter();
 

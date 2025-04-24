@@ -1,8 +1,8 @@
 //auth lucy scho
 'use client';
 import { useSession } from 'next-auth/react';
-import SignInButton from "./SignInButton";
-import SignOutButton from "./SignOutButton";
+import SignInButton from "./signInButton";
+import SignOutButton from "./signOutButton";
 import {Avatar, Box, Typography} from "@mui/material";
 
 export default function UserProfile() {
