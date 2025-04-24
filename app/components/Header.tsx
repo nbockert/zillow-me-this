@@ -2,7 +2,7 @@
 import React from "react";
 import { Box} from "@mui/material";
 import Image from "next/image";
-import UserProfile from "../components/UserProfile";
+import UserProfile from "./userProfile";
 
 const Header = () => {
     return (

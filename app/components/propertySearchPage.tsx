@@ -37,7 +37,12 @@ export default function PropertySearchPage() {
         try {
             const res = await fetch(`/api/search?${query.toString()}`);
             const data = await res.json();
-            console.log("Zillow API response:", data);
+
+            if (data.props){
+                data.props = data.props.filter((property: { zpid: string; }) =>{
+                    return !property.zpid.includes("-");
+                });
+            }
             setProperties(data.props || []);
         } catch (err) {
             console.error("Client error:", err);
