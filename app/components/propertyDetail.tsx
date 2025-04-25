@@ -2,7 +2,6 @@
 "use client"
 import {SingleProperty} from "@/app/types"
 import {Box, Card, CardMedia, Typography} from "@mui/material";
-import {padding} from "@mui/system";
 
 export default function PropertyDetail({property}: {property: SingleProperty}) {
     return(

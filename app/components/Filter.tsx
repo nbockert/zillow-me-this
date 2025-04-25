@@ -46,7 +46,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
 
     useEffect(() => {
         if (status === "ForRent") {
-            setHomeTypes(["Townhomes", "Houses", "Apartments_Condos_Co-ops"]);
+            setHomeTypes(["Townhomes", "Houses", "Apartments Condos Co-ops"]);
         } else {
             setHomeTypes([
                 "Multi-family",
@@ -54,7 +54,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
                 "Houses",
                 "Manufactured",
                 "Condos",
-                "LotsLand",
+                "Lots of Land",
                 "Townhomes",
             ]);
         }
@@ -91,7 +91,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
 
     return (
         <FilterWrapper>
-        <Box display="flex" flexWrap="wrap" gap={2} justifyContent="space-between" maxWidth="50%">
+        <Box display="flex" flexWrap="wrap" gap={2} maxWidth="50%">
             <TextField
                 label="Location"
                 value={location}
@@ -99,7 +99,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
                 required
             />
 
-            <FormControl>
+            <FormControl sx={{minWidth: "12vw"}}>
                 <InputLabel>Status Type</InputLabel>
                 <Select
                     value={status}
@@ -116,7 +116,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
             </FormControl>
 
             {status && (
-                <FormControl>
+                <FormControl sx={{minWidth: "12vw"}}>
                     <InputLabel>Home Type</InputLabel>
                     <Select
                         value={selectedHomeType}

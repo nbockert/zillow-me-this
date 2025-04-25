@@ -53,15 +53,6 @@ export default function PropertySearchPage() {
 
     return (
         <>
-            <nav>
-                <ul>
-                    <li>
-                <Link href='/'>
-                    <Typography variant="h4" sx={{textAlign: 'left', mb: 4, fontSize: '1.25rem',color:'#508D4E',m:2,fontWeight: 300}}>Home</Typography>
-                </Link>
-                    </li>
-                </ul>
-            </nav>
         <Box p={4}>
             <FilterBar onSearchAction={handleSearch} />
             {loading && <CircularProgress />}
