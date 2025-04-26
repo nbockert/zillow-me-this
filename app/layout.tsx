@@ -3,6 +3,8 @@ import React from "react"
 import styled from "styled-components"
 import theme from "@/app/theme";
 import { ThemeProvider } from "@mui/material/styles";
+import { SessionProvider } from 'next-auth/react'
+import Header from "@/app/components/Header";
 
 const Body = styled.body`
     margin: 0;
@@ -26,9 +28,12 @@ export default function RootLayout({children,
                 rel="stylesheet"/>
         </head>
         <Body>
+            <SessionProvider>
             <ThemeProvider theme={theme}>
-            {children}
+                <Header/>
+                {children}
             </ThemeProvider>
+            </SessionProvider>
         </Body>
         </html>
     );

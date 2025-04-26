@@ -14,8 +14,6 @@ export type Property = {
     imgSrc: string;
     price: number;
     bedrooms: number;
-    longitude: number;
-    latitude: number;
     listingStatus: string;
     zpid: string;
     listingSubType: {

@@ -1,7 +1,8 @@
 //author: Nora Bockert
 import React from "react";
-import { Box} from "@mui/material";
+import {Box, Link, Typography} from "@mui/material";
 import Image from "next/image";
+import UserProfile from "./userProfile";
 
 const Header = () => {
     return (
@@ -12,13 +13,17 @@ const Header = () => {
                 backgroundColor: "#a1e3f9",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "space-between",
                 padding: 0,
                 margin: 0,
                 boxShadow: 1,
                 flex: 1,
             }}
         >
+
+            <Link href='/'>
+                <Typography variant="h4" sx={{color:'#508D4E',fontWeight: 300, textDecoration: "none", padding: "1rem"}}><strong>ZillowMeThis</strong></Typography>
+            </Link>
             <Image
                 src="/logo.png"
                 alt="Logo"
@@ -26,6 +31,7 @@ const Header = () => {
                 height={154}
                 style={{ maxWidth: "100vw", height: "auto" }}
             />
+            <UserProfile />
         </Box>
     );
 };

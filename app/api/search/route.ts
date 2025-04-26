@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ error: "Missing required parameters" }, { status: 400 });
     }
 
-    const baseUrl = "https://zillow-com1.p.rapidapi.com/propertyExtendedSearch"; // or correct Zillow endpoint
+    const baseUrl = "https://zillow-com1.p.rapidapi.com/propertyExtendedSearch";
     const zillowParams = new URLSearchParams();
     zillowParams.append("location", location);
     zillowParams.append("status_type", status_type);
