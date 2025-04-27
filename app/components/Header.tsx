@@ -1,6 +1,6 @@
 //author: Nora Bockert
 import React from "react";
-import {Box, Link, Typography} from "@mui/material";
+import {Box} from "@mui/material";
 import Image from "next/image";
 import UserProfile from "./userProfile";
 
@@ -13,17 +13,15 @@ const Header = () => {
                 backgroundColor: "#a1e3f9",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
+                justifyContent: "center",
                 padding: 0,
                 margin: 0,
                 boxShadow: 1,
                 flex: 1,
             }}
         >
+            <Box sx={{ paddingTop: 2, alignItems: "center", justifyContent: "center" }}>
 
-            <Link href='/'>
-                <Typography variant="h4" sx={{color:'#508D4E',fontWeight: 300, textDecoration: "none", padding: "1rem"}}><strong>ZillowMeThis</strong></Typography>
-            </Link>
             <Image
                 src="/logo.png"
                 alt="Logo"
@@ -31,6 +29,7 @@ const Header = () => {
                 height={154}
                 style={{ maxWidth: "100vw", height: "auto" }}
             />
+            </Box>
             <UserProfile />
         </Box>
     );

@@ -55,7 +55,16 @@ export default function PropertySearchPage() {
         <>
         <Box p={4}>
             <FilterBar onSearchAction={handleSearch} />
-            {loading && <CircularProgress />}
+            {loading && (
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    height="200px" // optional: controls vertical space
+                >
+                    <CircularProgress />
+                </Box>
+            )}
             <Box mt={4} display="flex" flexWrap="wrap" gap={2} alignItems="center" justifyContent="center">
                 {properties.map((property) => (
                     <Link href={`/${property.zpid}`} key={property.zpid}>
