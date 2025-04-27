@@ -1,9 +1,7 @@
 "use client";
 import PropertySearchPage from '@/app/components/propertySearchPage';
-import Header from '@/app/components/Header';
 import { useSession } from "next-auth/react";
 import LogInPage from "@/app/components/logInPage";
-import {Link, Typography} from "@mui/material";
 import React from "react";
 
 export default function Home(){
