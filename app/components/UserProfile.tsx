@@ -1,27 +1,29 @@
 //auth lucy scho
+//This file creates a profile component in the top right of the page. It displays the user's profile,
+//and name using data from the google Oauth sign in.
 'use client';
-import { useSession } from 'next-auth/react';
-import SignInButton from "./SignInButton";
-import SignOutButton from "./SignOutButton";
-import {Avatar, Box, Typography} from "@mui/material";
+import { useSession } from 'next-auth/react'; // user session data hook
+import SignInButton from "./SignInButton"; // reusable sign-in button
+import SignOutButton from "./SignOutButton"; // reusable sign-out button
+import {Avatar, Box, Typography} from "@mui/material"; // mui for ui
 
 export default function UserProfile() {
     const { data: session, status } = useSession();
-
+// get session data and authentication status
     if (status === 'loading') {
+        // if the session is still loading
         return <p>Loading...</p>;
     }
-
     if (!session) {
+        //show sign in button
         return <div>
             <p>You are not signed in</p>
             <SignInButton/>
         </div>
 
     }
-
+// if the user is signed in, show their profile card
     return (
-
         <div>
             <Box
                 display="flex"
@@ -38,6 +40,7 @@ export default function UserProfile() {
                 }}
             >
             <Avatar
+                //google oauth component, used to display profile pic
                 alt={session.user?.name || ""}
                 src={session.user?.image || ""}
                 sx={{ width: 48, height: 48, mb: 1 }}
