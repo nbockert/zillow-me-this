@@ -1,4 +1,4 @@
-//author lucy scho
+//author lucy schofield
 //This file uses NextAuth to import GoogleProvider to set up google sign in.
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';

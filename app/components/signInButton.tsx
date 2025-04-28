@@ -1,4 +1,4 @@
-//auth: lucy scho
+//auth: lucy schofield
 //this file handles the sign-in button logic, it renders the button and uses an
 //onClick event to trigger OAuth
 "use client";

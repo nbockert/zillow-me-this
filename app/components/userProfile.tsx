@@ -1,4 +1,4 @@
-//auth lucy scho
+//auth lucy schofield
 'use client';
 import { useSession } from 'next-auth/react';
 import SignInButton from "./signInButton";

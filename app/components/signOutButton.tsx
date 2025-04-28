@@ -1,4 +1,4 @@
-//auth: lucy scho
+//auth: lucy schofield
 "use client";
 ////this file handles the sign-out button logic, it renders the button and checks to ensure the user is
 // currently autheniticated before appearing

@@ -1,4 +1,4 @@
-//auth: lucy scho
+//auth: lucy schofield
 "use client";
 import SignInButton from "./signInButton";
 import { Box, Typography } from "@mui/material";
