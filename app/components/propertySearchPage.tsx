@@ -7,6 +7,7 @@
  * them to the user.
  *
  */
+
 'use client';
 import { useState } from 'react';
 import FilterBar from './Filter';

@@ -5,6 +5,7 @@
  * This file defines the filter search bar to collect users criteria for listings
  *
  */
+
 "use client";
 
 import { useState, useEffect } from "react";
