@@ -1,4 +1,9 @@
-//author: Nora Bockert
+/**
+ * Author: Nora Bockert
+ *
+ * This file builds the header with the app logo
+ *
+ */
 import React from "react";
 import {Box} from "@mui/material";
 import Image from "next/image";

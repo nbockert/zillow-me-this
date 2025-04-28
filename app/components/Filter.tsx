@@ -1,4 +1,10 @@
-//author: Nora Bockert
+
+/**
+ * Author: Nora Bockert
+ *
+ * This file defines the filter search bar to collect users criteria for listings
+ *
+ */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -13,8 +19,10 @@ import {
 } from "@mui/material";
 import styled from "styled-components";
 
+//required parameter to set home types and rent value
 const status_type = ["ForSale", "ForRent", "RecentlySold"];
 
+// Define props expected by FilterBar component
 type FilterBarProps = {
     onSearchAction: (filters: {
         location: string;
@@ -25,6 +33,7 @@ type FilterBarProps = {
     }) => void;
 };
 
+// Style component for the filter
 const FilterWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +46,7 @@ const FilterWrapper = styled.div`
 `;
 
 export default function FilterBar({ onSearchAction }: FilterBarProps) {
+    // State hooks for each filter field
     const [status, setStatus] = useState<string>("");
     const [home_types, setHomeTypes] = useState<string[]>([]);
     const [location, setLocation] = useState<string>("");
@@ -44,6 +54,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
     const [rentMaxPrice, setRentMaxPrice] = useState<number | undefined>();
     const [selectedHomeType, setSelectedHomeType] = useState<string>("");
 
+    // Update available home types and reset price fields when status changes
     useEffect(() => {
         if (status === "ForRent") {
             setHomeTypes(["Townhomes", "Houses", "Apartments Condos Co-ops"]);
@@ -63,6 +74,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
         setSelectedHomeType("");
     }, [status]);
 
+    //builds filter objects when search button is clicked
     const handleSearch = () => {
         const filters: {
             location: string;
@@ -74,7 +86,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
             location,
             status_type: status,
         };
-
+        //set specific rent attribute associated with each status type
         if (selectedHomeType) filters.home_type = selectedHomeType;
         if (status === "ForRent" && rentMaxPrice !== undefined)
             filters.rentMaxPrice = rentMaxPrice;
@@ -88,7 +100,7 @@ export default function FilterBar({ onSearchAction }: FilterBarProps) {
         onSearchAction(filters);
     };
 
-
+//returns the filter bar
     return (
         <FilterWrapper>
         <Box display="flex" flexWrap="wrap" gap={2} maxWidth="50%">

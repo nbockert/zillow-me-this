@@ -1,4 +1,12 @@
-//author: Nora Bockert
+/**
+ * Author: Nora Bockert
+ *
+ * This file renders the search page by using the parameters set by Filter.tsx.
+ * On submit, this page will recieve the response from the api call and
+ * set the properties on the client side to render the search results and display
+ * them to the user.
+ *
+ */
 'use client';
 import { useState } from 'react';
 import FilterBar from './Filter';
@@ -8,6 +16,7 @@ import type {Property} from '@/app/types';
 
 
 export default function PropertySearchPage() {
+    //handle loading while waiting for api results and setting properties from api response
     const [properties, setProperties] = useState<Property[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -24,7 +33,7 @@ export default function PropertySearchPage() {
             location: filters.location,
             status_type: filters.status_type,
         });
-
+        //display attributes based on status type
         if (filters.home_type) query.append("home_type", filters.home_type);
         if (filters.status_type === "ForRent" && filters.rentMaxPrice !== undefined)
             query.append("rentMaxPrice", filters.rentMaxPrice.toString());
@@ -35,6 +44,7 @@ export default function PropertySearchPage() {
             query.append("maxPrice", filters.maxPrice.toString());
 
         try {
+            //await response from search/route.ts
             const res = await fetch(`/api/search?${query.toString()}`);
             const data = await res.json();
 
@@ -43,6 +53,7 @@ export default function PropertySearchPage() {
                     return !property.zpid.includes("-");
                 });
             }
+            //set properties to display listing details
             setProperties(data.props || []);
         } catch (err) {
             console.error("Client error:", err);

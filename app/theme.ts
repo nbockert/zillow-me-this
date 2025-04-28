@@ -1,3 +1,9 @@
+/**
+ * Author: Nora Bockert
+ *
+ * Initializes font family
+ *
+ */
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({

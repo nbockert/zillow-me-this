@@ -1,10 +1,9 @@
-export type PropertyApiResponse = {
-    props: Property[];
-    resultsPerPage: number;
-    totalPages: number;
-    totalResultCount: number;
-    currentPage: number;
-};
+/**
+ * Author: Nora Bockert
+ *
+ * Define data types from the api response
+ *
+ */
 
 export type Property = {
     dateSold: string | null;
