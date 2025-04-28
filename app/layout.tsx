@@ -1,3 +1,11 @@
+/**
+ *
+ * This file defines the layout for the entire application. It ensures the
+ * authentication and theme provider. It ensures each page has a header
+ * and the relevant and the relevant children.
+ *
+ */
+
 "use client"
 import React from "react"
 import styled from "styled-components"

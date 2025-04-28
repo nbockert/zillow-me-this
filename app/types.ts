@@ -1,34 +1,24 @@
 /**
- * Author: Nora Bockert
- *
- * Define data types from the api response
- *
+ * This file defines the object types used in the application
+ * specifically to sort and access the data from the Zillow API.
  */
 
+
 export type Property = {
-    dateSold: string | null;
+    // A property object. It is used in the response from the PropertySearch page.
     propertyType: string;
-    lotAreaValue: number;
     address: string;
     imgSrc: string;
     price: number;
     bedrooms: number;
-    listingStatus: string;
     zpid: string;
-    listingSubType: {
-        is_FSBA: boolean;
-    };
-    contingentListingType: string | null;
-    daysOnZillow: number;
     bathrooms: number;
     livingArea: number;
-    country: string;
-    currency: string;
-    lotAreaUnit: string;
-    hasImage: boolean;
 };
 
 export type SingleProperty = {
+    // A detailed version of property object that fits the response of retrieving a
+    // single property from the Zillow API. It is used in the PropertyDetail page.
     zpid: string;
     imgSrc: string;
     price: number;
@@ -44,5 +34,4 @@ export type SingleProperty = {
         state: string;
         zipCode: string;
     };
-    home_type: string;
 };
